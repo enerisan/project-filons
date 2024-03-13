@@ -1,4 +1,6 @@
-* { background-color: #F1E6D8;}
+* { 
+        box-sizing: border-box;
+}
 
 :root {
     --color-button : #126646 ; 
@@ -8,13 +10,29 @@
     --font-main: DM Sans ;
 }
 
-nav{
-
-    height : 10rem;
-    background-color: var(--color-navbar);
-   
-}
+nav > ul {
+    padding: 0;
+    margin-right: 1rem;
+    list-style: none;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav > ul > li {
+    display: inline-block;
+  }
+  
+  nav > ul > li > a {
+    padding: 0.25rem;
+    text-decoration: none;
+    color: #fff;
+  }
 
 .logo {
     width : 10rem;
 }
+ body {
+    margin: 0;
+
+ }
