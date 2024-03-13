@@ -1,0 +1,20 @@
+* { background-color: #F1E6D8;}
+
+:root {
+    --color-button : #126646 ; 
+    --color-border: #1BB45D;
+    --color-navbar: #1F5A50;
+    --nav-font: Marcellus ;
+    --font-main: DM Sans ;
+}
+
+nav{
+
+    height : 10rem;
+    background-color: var(--color-navbar);
+   
+}
+
+.logo {
+    width : 10rem;
+}
