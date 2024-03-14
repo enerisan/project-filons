@@ -10,7 +10,7 @@ const textRevez = document.querySelector('.TextRevez');
 const imagesCards = [
   {
     picture: "images/holiday-2831250_1280.png",
-    style: "Les pieds dans l´eau",
+    style: "Les pieds dans l'eau",
   },
   {
     picture: "images/mountains-6964679_1280.png",
@@ -56,6 +56,17 @@ commencezButton.addEventListener("click", () => {
   for (let i = 0; i < imagesCards.length; i++) {
     createCard( imagesCards[i].picture,imagesCards[i].style);
   }
+});
+
+document.addEventListener("change", function (event) {
+    const menuList = document.querySelector("#menu");
+    if (event.target.matches("#menuToggle")) {
+        if (event.target.checked) {
+            menuList.style.display = "flex";
+        } else {
+            menuList.style.display = "none";
+        }
+    }
 });
 
 

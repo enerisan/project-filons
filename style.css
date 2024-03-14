@@ -11,9 +11,7 @@
   --font-main: DM Sans;
 }
 
-header {
-    /* background-color: #1f5a50; */  
-}
+
 
 nav {
   height: 5rem;
@@ -43,21 +41,27 @@ header div ul {
   align-items: center;
 }
 
+#menu {
+  display: none;
+}
+
 #burger {
   background-image: url(menu-burger.png);
   background-size: contain;
-  /* background-position: center;
-  background-repeat: no-repeat; */
+  background-position: center;
+  background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  margin-right: 1rem;
-  border-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
   background-color: #1f5a50;
   
 }
 
-.menu-burger input {
+#menuToggle {
   display: none;
+  list-style: none;
 }
 
 body {
@@ -97,6 +101,18 @@ main button {
   
 }
 
+.sectionPage2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  width: 10rem;
+}
+
 footer {
 
   text-align: center;
@@ -122,6 +138,7 @@ footer {
   background-image: url("");
   min-width: 10rem;
   min-height: 10rem;
+  
 
 }
 .card {
