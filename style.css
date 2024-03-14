@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 * { 
         box-sizing: border-box;
 }
@@ -38,6 +39,11 @@ nav > ul {
 
  }
 =======
+=======
+
+=======
+>>>>>>> 8493ce607a2d063085a31d01afea15a293de719c
+>>>>>>> 33020a3ac17913cd137f142da5db710e35ff802e
 * {
   /* background-color: #f1e6d8; */
   box-sizing: border-box;
@@ -143,6 +149,28 @@ footer {
 .logo-rs {
   width : 3rem;
 }
+<<<<<<< HEAD
+.sectionPage2 {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 
+  
+}
+.card {
+  display: flex;
+  justify-content: center;
+ /*  align-items: center; */
+
+  
+}
+
+.card img {
+  max-width: 15rem; 
+  max-height: 15rem; 
+}
+=======
+
+>>>>>>> 8493ce607a2d063085a31d01afea15a293de719c
 
 >>>>>>> 8493ce607a2d063085a31d01afea15a293de719c
