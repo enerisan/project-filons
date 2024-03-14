@@ -68,6 +68,7 @@ body {
 
 main {
   margin: 5rem 0;
+  padding : ;
 }
 
 .main-page-1 {
@@ -97,6 +98,7 @@ main button {
 }
 
 footer {
+
   text-align: center;
 }
 
@@ -104,4 +106,29 @@ footer {
   width : 3rem;
 }
 
+.sectionPage2 {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 
+  
+}
+
+main .card  {
+  display: flex;
+  justify-content: center;
+
+ /*  align-items: center; */ 
+}
+
+.imgsoleil {
+  display : flex;
+  width: 300px;
+  align-items: center;
+}
+
+
+.card img {
+  max-width: 15rem; 
+  max-height: 15rem; 
+}
