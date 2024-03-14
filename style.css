@@ -11,9 +11,7 @@
   --font-main: DM Sans;
 }
 
-header {
-    /* background-color: #1f5a50; */  
-}
+
 
 nav {
   height: 5rem;
@@ -101,6 +99,7 @@ main button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .card {
@@ -130,6 +129,7 @@ footer {
   background-image: url("");
   min-width: 10rem;
   min-height: 10rem;
+  
 
 
 .card {

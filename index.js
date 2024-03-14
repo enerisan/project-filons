@@ -11,7 +11,7 @@ const imagesCards = [
   {
  
     picture: "images/holiday-2831250_1280.png",
-    style: "Les pieds dans l´eau",
+    style: "À l'eau",
   },
   {
  
