@@ -15,6 +15,17 @@ commencezButton.addEventListener("click", () => {
     image.classList.add("card"); 
     card.appendChild(image);
 
+    const btnMer = document.createElement("button");
+    btnMer.id = "pied-a-l-eau";
+    btnMer.innerHTML = "Cliquez ici";
+    pied-à-l-eau.appendChild(btnMer);
+
+   
+    // const divMer = document.querySelector(".sectionPage2")
+    // const text = document.querySelector("p")
+    // text.innerHTML = "Les pieds dans l'eau"
+
+
    
 });
 
@@ -86,9 +97,9 @@ function createCard(title, imageUrl) {
 
 
 
-function capitalize(name) {
+// function capitalize(name) {
 
- let fixedName =  name[0].charAt() + name.substring(1).toLowerCase();
- return fixedName;
+//  let fixedName =  name[0].charAt() + name.substring(1).toLowerCase();
+//  return fixedName;
   
-}
+// }

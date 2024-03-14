@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 8493ce607a2d063085a31d01afea15a293de719c
 * {
   /* background-color: #f1e6d8; */
   box-sizing: border-box;
@@ -100,6 +96,17 @@ main button {
   
 }
 
+.sectionPage2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 10rem;
+}
+
 footer {
   text-align: center;
 }
@@ -107,27 +114,4 @@ footer {
 .logo-rs {
   width : 3rem;
 }
-<<<<<<< HEAD
-.sectionPage2 {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-
-  
-}
-.card {
-  display: flex;
-  justify-content: center;
- /*  align-items: center; */
-
-  
-}
-
-.card img {
-  max-width: 15rem; 
-  max-height: 15rem; 
-}
-=======
-
->>>>>>> 8493ce607a2d063085a31d01afea15a293de719c
 
