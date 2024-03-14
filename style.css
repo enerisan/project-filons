@@ -1,0 +1,126 @@
+
+* {
+  /* background-color: #f1e6d8; */
+  box-sizing: border-box;
+}
+
+:root {
+  --color-button: #126646;
+  --color-border: #1bb45d;
+  --color-navbar: #1f5a50;
+  --nav-font: Marcellus;
+  --font-main: DM Sans;
+}
+
+header {
+    /* background-color: #1f5a50; */  
+}
+
+nav {
+  height: 5rem;
+  background-color: #1f5a50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 5rem;
+  margin-left: 1rem;
+}
+
+header div ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 1rem;
+
+}
+
+.burger-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+#burger {
+  background-image: url(menu-burger.png);
+  background-size: contain;
+  /* background-position: center;
+  background-repeat: no-repeat; */
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  border-style: none;
+  background-color: #1f5a50;
+  
+}
+
+.menu-burger input {
+  display: none;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #f1e6d8;
+  margin: 0;
+}
+
+main {
+  margin: 5rem 0;
+}
+
+.main-page-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-button);
+}
+
+.logo-main {
+  width: 30rem;
+  /* height: 30rem; */
+}
+main h2 {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+main button {
+  background-color: #127646;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  color: white;
+  
+}
+
+footer {
+  text-align: center;
+}
+
+.logo-rs {
+  width : 3rem;
+}
+.sectionPage2 {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  
+}
+.card {
+  display: flex;
+  justify-content: center;
+ /*  align-items: center; */
+
+  
+}
+
+.card img {
+  max-width: 15rem; 
+  max-height: 15rem; 
+}
+
