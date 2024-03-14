@@ -9,17 +9,14 @@ const textRevez = document.querySelector('.TextRevez');
 /* LISTE DE CARDS */
 const imagesCards = [
   {
- 
     picture: "images/holiday-2831250_1280.png",
     style: "Les pieds dans l´eau",
   },
   {
- 
     picture: "images/mountains-6964679_1280.png",
     style: "À l´air frais",
   },
   {
-   
     picture: "images/town-36095_1280.png",
     style:"À la ville",
   }
@@ -40,22 +37,10 @@ function createCard(imageUrl, textButton) {
   cardImg.classList.add("card-img");
   cardHeader.appendChild(cardImg);
 
-  // Step1: Create the cardBody div, add the class card-body and add it to the card
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
   card.appendChild(cardBody);
 
-  // Step2: Create the cardTitle h2, add the class card-title,
-  // set the text inside the tag to the "title" parameter of this function
-  // and add it to the cardBody
- /*  const cardTitle = document.createElement("h2");
-  cardTitle.innerHTML = title;
-  cardTitle.classList.add("card-title");
-  cardBody.appendChild(cardTitle); */
-
-  // Step3: Create the cardButton button, add the class card-button,
-  // set the text inside the tag to be "Adopt Now"
-  // and add it to the cardBody
   const cardButton = document.createElement("button");
   cardButton.classList.add("card-button");
   cardButton.innerHTML = textButton;
