@@ -41,21 +41,27 @@ header div ul {
   align-items: center;
 }
 
+#menu {
+  display: none;
+}
+
 #burger {
   background-image: url(menu-burger.png);
   background-size: contain;
-  /* background-position: center;
-  background-repeat: no-repeat; */
+  background-position: center;
+  background-repeat: no-repeat;
   width: 2rem;
   height: 2rem;
-  margin-right: 1rem;
-  border-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
   background-color: #1f5a50;
   
 }
 
-.menu-burger input {
+#menuToggle {
   display: none;
+  list-style: none;
 }
 
 body {
@@ -64,8 +70,9 @@ body {
   margin: 0;
 }
 
-main {
-  margin: 5rem 0;
+main { 
+  margin-top : 1rem;
+  margin-bottom: 5rem;
 }
 
 .main-page-1 {
@@ -114,6 +121,7 @@ footer {
 .logo-rs {
   width : 3rem;
 }
+
 .sectionPage2 {
   display: flex;
   justify-content: center;
@@ -121,6 +129,7 @@ footer {
   align-items: center;
   text-align: center;
   gap : 1rem;
+ 
 }
 
 .card-img {
@@ -136,7 +145,7 @@ footer {
   border-radius: 10px ;
   border : 1px solid #1bb45d;
   
-  display: flex;
+  display: block;
   flex-direction: column;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 15rem;
@@ -153,4 +162,33 @@ footer {
   border-radius: 10px;
   height: 50px;
   gap : 10rem;  width: 100%;
+}
+
+@media screen and (min-width : 992px){
+
+main {
+    margin-top : 5rem ;
+    margin-bottom: 9rem;
+
+  }
+
+main h2 {
+    font-size: 2.5rem;
+  }
+
+.sectionPage2,.card{
+ flex-direction: row;;
+ justify-content : center;
+ gap : 3rem;
+  }
+
+.card {
+
+  width: 17rem;
+  height: 17rem;
+  }
+  .card-button {
+    margin-top: 1.5rem;
+  }
+
 }

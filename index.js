@@ -51,9 +51,22 @@ function createCard(imageUrl, textButton) {
 commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
-  textRevez.innerHTML = "Quels sont vos envies ?";
+  textRevez.innerHTML = "Quelles sont vos envies ?";
 
   for (let i = 0; i < imagesCards.length; i++) {
     createCard( imagesCards[i].picture,imagesCards[i].style);
   }
 });
+
+document.addEventListener("change", function (event) {
+    const menuList = document.querySelector("#menu");
+    if (event.target.matches("#menuToggle")) {
+        if (event.target.checked) {
+            menuList.style.display = "flex";
+        } else {
+            menuList.style.display = "none";
+        }
+    }
+});
+
+
