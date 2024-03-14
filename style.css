@@ -68,7 +68,6 @@ body {
 
 main {
   margin: 5rem 0;
-  padding : ;
 }
 
 .main-page-1 {
@@ -105,30 +104,42 @@ footer {
 .logo-rs {
   width : 3rem;
 }
-
 .sectionPage2 {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-
-  
-}
-
-main .card  {
-  display: flex;
-  justify-content: center;
-
- /*  align-items: center; */ 
-}
-
-.imgsoleil {
-  display : flex;
-  width: 300px;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap : 1rem;
 }
 
+.card-img {
+  background-size: cover;
+  background-position: center;
+  background-image: url("");
+  min-width: 10rem;
+  min-height: 10rem;
 
-.card img {
-  max-width: 15rem; 
-  max-height: 15rem; 
+}
+.card {
+  border-radius: 10px ;
+  border : 1px solid #1bb45d;
+  
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 15rem;
+  height: 15rem;
+}
+
+.card-body {
+  padding: 10px 20px;
+}
+.card-body h2 {
+  margin: 10px 0px;
+}
+.card-button {
+  border-radius: 10px;
+  height: 50px;
+  gap : 10rem;  width: 100%;
 }
