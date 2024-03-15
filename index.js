@@ -10,7 +10,7 @@ const textRevez = document.querySelector('.TextRevez');
 const imagesCards = [
   {
     picture: "images/holiday-2831250_1280.png",
-    style: "Les pieds dans l´eau",
+    style: "Les pieds dans l'eau",
   },
   {
     picture: "images/mountains-6964679_1280.png",
@@ -58,22 +58,33 @@ function createCard(imageUrl, textButton) {
   }
 });
 
-const burgerButton = document.querySelector('#burger'); 
-
 document.addEventListener("change", function (event) {
-  const listeMenu = document.querySelector(".menu");
-  if (event.target.matches("#burger")) { 
-    if (event.target.checked){
-      listeMenu.style.display = "flex"; 
-    } else { 
-      listeMenu.style.display = "none";
+    const menuList = document.querySelector("#menu");
+    if (event.target.matches("#menuToggle")) {
+        if (event.target.checked) {
+            menuList.style.display = "flex";
+        } else {
+            menuList.style.display = "none";
+        }
     }
-  }
-
 });
 
 
 
+const budgetList = [
+    {
+    names : "500€ - 1000€",
+    picture : "images/money-2831324_1289.png",
+    },
+    {
+        names : " 1000 - 2500€",
+        picture :"",
+    },
+    {
+        names : "2500€ - 10000€",
+        picture : "",
+    }
+]
 
 
 
@@ -191,4 +202,3 @@ const cityList =[
    },
 
 ];
-
