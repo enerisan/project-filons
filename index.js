@@ -1,6 +1,6 @@
 /* INTERACTION PAGE 1-2 */
 
-/* SELECTION DES ELEMENTS */
+/* SELECTION DES ELEMENTS PAG ACCUEIL */
 const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
@@ -8,9 +8,9 @@ const textRevez = document.querySelector('.TextRevez');
 const lol = document.querySelector('.catButton');
 
 
-/* LISTE DE CARDS */
+/* LISTE IMAGES PAG 2*/
 const imagesCards = [
-  {
+  { 
     picture: "images/holiday-2831250_1280.png",
     style: "Les pieds dans l'eau",
   },
@@ -25,24 +25,23 @@ const imagesCards = [
   }
 ];
 
-const budgetList = [
+/* LISTE IMAGES PAG 3 */
+const imagesBudget = [
     {
-         picture : "images/money-2831324_1289.png",
-         style : "500€ - 1000€",
-       
+   style: "500€ - 1000€",
+    picture: "images/money-2831324_1280.png",
     },
     {
-        picture :"",
-        style: " 1000 - 2500€",
-        
+        style : " 1000 - 2500€",
+        picture :"images/money-2831248_1280.png",
     },
     {
-         picture : "",
-         style : "2500€ - 10000€",
-       
+       style: "2500€ - 10000€",
+        picture : "images/pirate-6907221_1280.png",
     }
 ]; 
-/* FONCTION POUR CRÉER LES CARDS */
+
+/* FONCTION POUR CRÉER LES CARDS PAG 2 */
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -67,16 +66,19 @@ function createCard(imageUrl, textButton) {
   cardBody.appendChild(cardButton);
 
   cardButton.addEventListener("click", () => {
-    sectionPage2.innerHTML="";
-    textRevez.innerHTML = "Quel est votre budget ?";
-    for (let i = 0; i < budgetList.length; i++) {
-         createCard(budgetList[i].style,budgetList[i].picture);
+    textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+    sectionPage2.innerHTML = ""; 
+    for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
       }
+
   });
+
 }
 
 
-/* EVENT */
+
+/* EVENT PAG 1*/
   commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
@@ -84,25 +86,13 @@ function createCard(imageUrl, textButton) {
 
 
   for (let i = 0; i < imagesCards.length; i++) {
- createCard(imagesCards[i].picture,imagesCards[i].style);
- }
+    createCard(imagesCards[i].picture,imagesCards[i].style);
+  }
 });
 
-/* const buttons = document.createElement("button");
-buttons.classList.add('.card-button');
-cardButton.innerHTML = textButton;
-sectionPage3.appendChild(buttons);  */
+//EVENT MENU BURGER //
 
-
-
-
-
-
-
-
-
-
-/* document.addEventListener("change", function (event) {
+document.addEventListener("change", function (event) {
     const menuList = document.querySelector("#menu");
     if (event.target.matches("#menuToggle")) {
         if (event.target.checked) {
@@ -111,37 +101,14 @@ sectionPage3.appendChild(buttons);  */
             menuList.style.display = "none";
         }
     }
-}); */
-
-
-
- 
+});
 
 
 
 
 
 
-
-
-
-
-
-  
-
-
-
-
-/* INTERACTION PAGE 2 3 */ 
-
-
-
-
-
-
-
-
-
+/* 
 const cityList =[
   // Les Pieds dans l'eau 
    { 
@@ -186,14 +153,15 @@ const cityList =[
        cat : "Alairfrais",
        style : "500-1000",
    },
-  /* {
+ {
        name : "...",
        picture : "...",
        cat : "Alairfrais",
        style : "500-1000",
-   },*/
-   {
-       name : "Le Mont Blanc",
+   },
+
+  {
+       name : "lemontblanc",
        picture : "imgp1/montblanc.jpg",
        cat : "Alairfrais",
        style : "1000-2500",
@@ -234,15 +202,15 @@ const cityList =[
        picture : "imgp1/londres.jpg",
        cat : "Alaville",
        style : "1000-2500",
-   },
+   }, 
     {
-       name : "Amsterdam",
-       picture : "imgp1/amsterdam.jpg",
+       name : "",
+       picture : "",
        cat : "Alaville",
        style : "1000-2500",
    }, 
-   { 
-       name : "New-York",
+   {  
+       name : "newyork",
        picture : "imgp1/ny2.jpg",
        cat : "Alaville",
        style : "2500-10000",
@@ -253,5 +221,6 @@ const cityList =[
        cat : "Alaville",
        style : "2500-10000",
    },
-
-];
+ ];  
+} */
+ 
