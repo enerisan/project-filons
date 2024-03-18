@@ -204,8 +204,8 @@ const cityList =[
        style : "1000-2500",
    }, 
     {
-       name : "",
-       picture : "",
+       name : "Amsterdam",
+       picture : "imgp1/amsterdam.jpg",
        cat : "Alaville",
        style : "1000-2500",
    }, 
