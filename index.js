@@ -1,14 +1,14 @@
 /* INTERACTION PAGE 1-2 */
 
-/* SELECTION DES ELEMENTS */
+/* SELECTION DES ELEMENTS PAG ACCUEIL */
 const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
 const textRevez = document.querySelector('.TextRevez');
 
-/* LISTE DE CARDS */
+/* LISTE IMAGES PAG 2*/
 const imagesCards = [
-  {
+  { 
     picture: "images/holiday-2831250_1280.png",
     style: "Les pieds dans l'eau",
   },
@@ -22,7 +22,23 @@ const imagesCards = [
   }
 ];
 
-/* FONCTION POUR CRÉER LES CARDS */
+/* LISTE IMAGES PAG 3 */
+const imagesBudget = [
+    {
+   style: "500€ - 1000€",
+    picture: "images/money-2831324_1280.png",
+    },
+    {
+        style : " 1000 - 2500€",
+        picture :"images/money-2831248_1280.png",
+    },
+    {
+       style: "2500€ - 10000€",
+        picture : "images/pirate-6907221_1280.png",
+    }
+]; 
+
+/* FONCTION POUR CRÉER LES CARDS PAG 2 */
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -45,18 +61,32 @@ function createCard(imageUrl, textButton) {
   cardButton.classList.add("card-button");
   cardButton.innerHTML = textButton;
   cardBody.appendChild(cardButton);
+
+  cardButton.addEventListener("click", () => {
+    textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+    sectionPage2.innerHTML = ""; 
+    for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
+      }
+
+  });
+
 }
 
-/* EVENT */
+
+
+/* EVENT PAG 1*/
   commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
   textRevez.innerHTML = "Quelles sont vos envies ?";
 
   for (let i = 0; i < imagesCards.length; i++) {
-    createCard( imagesCards[i].picture,imagesCards[i].style);
+    createCard(imagesCards[i].picture,imagesCards[i].style);
   }
 });
+
+//EVENT MENU BURGER //
 
 document.addEventListener("change", function (event) {
     const menuList = document.querySelector("#menu");
@@ -71,24 +101,10 @@ document.addEventListener("change", function (event) {
 
 
 
-const budgetList = [
-    {
-    names : "500€ - 1000€",
-    picture : "images/money-2831324_1289.png",
-    },
-    {
-        names : " 1000 - 2500€",
-        picture :"",
-    },
-    {
-        names : "2500€ - 10000€",
-        picture : "",
-    }
-]
 
 
 
-
+/* 
 const cityList =[
   // Les Pieds dans l'eau 
    { 
@@ -133,13 +149,14 @@ const cityList =[
        cat : "Alairfrais",
        style : "500-1000",
    },
-  /* {
+ {
        name : "...",
        picture : "...",
        cat : "Alairfrais",
        style : "500-1000",
-   },*/
-   {
+   },
+
+  {
        name : "lemontblanc",
        picture : "imgp1/montblanc.jpg",
        cat : "Alairfrais",
@@ -181,14 +198,14 @@ const cityList =[
        picture : "",
        cat : "Alaville",
        style : "1000-2500",
-   },
-   /* {
+   }, 
+    {
        name : "",
        picture : "",
        cat : "Alaville",
        style : "1000-2500",
-   }, */
-   { 
+   }, 
+   {  
        name : "newyork",
        picture : "imgp1/ny2.jpg",
        cat : "Alaville",
@@ -200,5 +217,6 @@ const cityList =[
        cat : "Alaville",
        style : "2500-10000",
    },
-
-];
+ ];  
+} */
+ 
