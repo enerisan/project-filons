@@ -72,7 +72,7 @@ nav {
 }
 
 .logo {
-  width: 7rem;
+  width: 8rem;
   margin-left: 1rem;
 }
 
@@ -91,6 +91,7 @@ header div ul {
   align-items: center;
   padding-right: 1rem;
   color : #fff;
+  margin-right: 1rem;
 
 }
 
@@ -126,8 +127,8 @@ body {
 }
 
 main { 
-  margin-top : 1rem;
-  margin-bottom: 15rem;
+/*   margin-top : 5rem; */
+  margin-bottom: 5rem;
 }
 
 .main-page-1 {
@@ -140,13 +141,11 @@ main {
 
 .logo-main {
   width: 20rem;
-  margin-top : 3rem;
-  margin-bottom: 4rem;
-  /* height: 30rem; */
-}
+
+} 
 main h2 {
   font-size: 1.5rem;
-  margin: 0;
+margin-top: 0;
   margin-bottom: 2rem;
 }
 
@@ -166,17 +165,18 @@ main button {
   text-align: center;
 }
 
-.card {
-  width: 10rem;
-}
+
 
 footer {
   text-align: center;
+  margin-top: 1rem;
 }
 
 
 .logo-rs {
-  width : 3rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .sectionPage2 {
@@ -193,8 +193,10 @@ footer {
   background-size: cover;
   background-position: center;
   background-image: url("");
-  min-width: 10rem;
-  min-height: 10rem;
+  width: 100%;
+  height: 20rem;
+  
+  
   
 
 }
@@ -205,8 +207,9 @@ footer {
   display: block;
   flex-direction: column;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 15rem;
-  height: 15rem;
+  width: 20rem;
+  
+ 
 }
 
 .card-body {
@@ -225,11 +228,12 @@ footer {
 
   .burger-menu{
  font-size: 1.2rem;
+ margin-right: 3.5rem;
 }
 
 main {
     margin-top : 5rem ;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 
   }
 .logo-main { 
@@ -247,15 +251,7 @@ main h2 {
  
   }
 
-.card {
 
-  width: 17rem;
-  height: 17rem;
-  }
-  .card-button {
-    margin-top: 1.5rem;
-  
-  }
 
 }
 <<<<<<< HEAD
