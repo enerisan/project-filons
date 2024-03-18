@@ -5,6 +5,8 @@ const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
 const textRevez = document.querySelector('.TextRevez');
+const lol = document.querySelector('.catButton');
+
 
 /* LISTE DE CARDS */
 const imagesCards = [
@@ -19,9 +21,27 @@ const imagesCards = [
   {
     picture: "images/town-36095_1280.png",
     style:"À la ville",
+    names : "200"
   }
 ];
 
+const budgetList = [
+    {
+         picture : "images/money-2831324_1289.png",
+         style : "500€ - 1000€",
+       
+    },
+    {
+        picture :"",
+        style: " 1000 - 2500€",
+        
+    },
+    {
+         picture : "",
+         style : "2500€ - 10000€",
+       
+    }
+]; 
 /* FONCTION POUR CRÉER LES CARDS */
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
@@ -45,7 +65,16 @@ function createCard(imageUrl, textButton) {
   cardButton.classList.add("card-button");
   cardButton.innerHTML = textButton;
   cardBody.appendChild(cardButton);
+
+  cardButton.addEventListener("click", () => {
+    sectionPage2.innerHTML="";
+    textRevez.innerHTML = "Quel est votre budget ?";
+    for (let i = 0; i < budgetList.length; i++) {
+         createCard(budgetList[i].style,budgetList[i].picture);
+      }
+  });
 }
+
 
 /* EVENT */
   commencezButton.addEventListener("click", () => {
@@ -53,12 +82,27 @@ function createCard(imageUrl, textButton) {
   commencezButton.style.display = "none";
   textRevez.innerHTML = "Quelles sont vos envies ?";
 
+
   for (let i = 0; i < imagesCards.length; i++) {
-    createCard( imagesCards[i].picture,imagesCards[i].style);
-  }
+ createCard(imagesCards[i].picture,imagesCards[i].style);
+ }
 });
 
-document.addEventListener("change", function (event) {
+/* const buttons = document.createElement("button");
+buttons.classList.add('.card-button');
+cardButton.innerHTML = textButton;
+sectionPage3.appendChild(buttons);  */
+
+
+
+
+
+
+
+
+
+
+/* document.addEventListener("change", function (event) {
     const menuList = document.querySelector("#menu");
     if (event.target.matches("#menuToggle")) {
         if (event.target.checked) {
@@ -67,24 +111,33 @@ document.addEventListener("change", function (event) {
             menuList.style.display = "none";
         }
     }
-});
+}); */
 
 
 
-const budgetList = [
-    {
-    names : "500€ - 1000€",
-    picture : "images/money-2831324_1289.png",
-    },
-    {
-        names : " 1000 - 2500€",
-        picture :"",
-    },
-    {
-        names : "2500€ - 10000€",
-        picture : "",
-    }
-]
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+/* INTERACTION PAGE 2 3 */ 
+
+
+
+
+
 
 
 
@@ -128,7 +181,7 @@ const cityList =[
    },
    // A l'air frais 
    {
-       name : "suisse",
+       name : "La Suisse",
        picture : "imgp1/suisse.jpg",
        cat : "Alairfrais",
        style : "500-1000",
@@ -140,63 +193,63 @@ const cityList =[
        style : "500-1000",
    },*/
    {
-       name : "lemontblanc",
+       name : "Le Mont Blanc",
        picture : "imgp1/montblanc.jpg",
        cat : "Alairfrais",
        style : "1000-2500",
    }, 
    { 
-       name : "laponie",
+       name : "La Laponie",
        picture : "imgp1/laponie.jp",
        cat : "Alairfrais",
        style : "1000-2500",
    },
    {
-       name : "monfuji",
+       name : "Le Monfuji",
        picture : "imgp1/fuji.jpg",
        cat : "Alairfrais",
        style : "2500-10000",
    },
    {
-       name : "canada",
+       name : "Le Canada",
        picture : "imgp1/canada.jpg",
        cat : "Alairfrais",
        style : "2500-1000",
    },
 // A la ville 
    { 
-       name : "paris",
+       name : "Paris",
        picture : "imgp1/paris.jpg",
        cat : "Alaville",
        style : "500-1000",
    },
    { 
-       name : "dublin",
-       picture : "",
+       name : "Lyon",
+       picture : "imgp1/lyon.jpg",
        cat : "Alaville",
        style : "500-1000",
    },
    {
-       name : "londres",
-       picture : "",
+       name : "Londres",
+       picture : "imgp1/londres.jpg",
        cat : "Alaville",
        style : "1000-2500",
    },
-   /* {
-       name : "",
-       picture : "",
+    {
+       name : "Amsterdam",
+       picture : "imgp1/amsterdam.jpg",
        cat : "Alaville",
        style : "1000-2500",
-   }, */
+   }, 
    { 
-       name : "newyork",
+       name : "New-York",
        picture : "imgp1/ny2.jpg",
        cat : "Alaville",
        style : "2500-10000",
    }, 
    {
-       name : "tokyo",
-       picture : "",
+       name : "Tokyo",
+       picture : "imgp1/tokyo.jpg",
        cat : "Alaville",
        style : "2500-10000",
    },
