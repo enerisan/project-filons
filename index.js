@@ -1,14 +1,131 @@
-/* INTERACTION PAGE 1-2 */
 
-/* SELECTION DES ELEMENTS PAG ACCUEIL */
+//LISTE DESTINATIONS 
+const cityList =[
+    // Les Pieds dans l'eau 
+     { 
+         name : "Saint-Jean de Luz",
+         picture : "imgp1/sanjeandeluz.jpg",
+         cat : "Lespiedsdansleau",
+         style : "500-1000",
+     },
+     {
+         name :"San Sebastián",
+         picture: "imgp1/sansebastian.jpg",
+         cat : "Lespiedsdansleau",
+         style : "500-1000",
+     },
+     {
+         name : "Santorin",
+         picture : "img1/grce.jpg",
+         cat : "Lespiedsdansleau",
+         style : "1000-2500",
+     },
+     {  name : "Italie",
+        picture : "imgp1/italie.jpg",
+        cat : "Lespiedsdansleau",
+        style : "1000-2500",
+     },
+     {
+         name : "Seychelles",
+         picture : "imgp1/seychelles.jpg",
+         cat : "Lespiecsdansleau",
+         style : "2500-10000",
+     },
+     {
+         name : "Thailande",
+         picture : "imgp1/Thailande.jpg",
+         cat : "Lespiedsdansleau",
+         style : "2500-10000",
+     },
+     // A l'air frais 
+     {
+         name : "La Suisse",
+         picture : "imgp1/suisse.jpg",
+         cat : "Alairfrais",
+         style : "500-1000",
+     },
+   {
+         name : "...",
+         picture : "...",
+         cat : "Alairfrais",
+         style : "500-1000",
+     },
+  
+    {
+         name : "Le Mont Blanc",
+         picture : "imgp1/montblanc.jpg",
+         cat : "Alairfrais",
+         style : "1000-2500",
+     }, 
+     { 
+         name : "La Laponie",
+         picture : "imgp1/laponie.jpg",
+         cat : "Alairfrais",
+         style : "1000-2500",
+     },
+     {
+         name : "Le Monfuji",
+         picture : "imgp1/fuji.jpg",
+         cat : "Alairfrais",
+         style : "2500-10000",
+     },
+     {
+         name : "Le Canada",
+         picture : "imgp1/canada.jpg",
+         cat : "Alairfrais",
+         style : "2500-1000",
+     },
+  // A la ville 
+     { 
+         name : "Paris",
+         picture : "imgp1/paris.jpg",
+         cat : "Alaville",
+         style : "500-1000",
+     },
+     { 
+         name : "Lyon",
+         picture : "imgp1/lyon.jpg",
+         cat : "Alaville",
+         style : "500-1000",
+     },
+     {
+         name : "Londres",
+         picture : "imgp1/londres.jpg",
+         cat : "Alaville",
+         style : "1000-2500",
+     }, 
+      {
+         name : "Amsterdam",
+         picture : "imgp1/amsterdam.jpg",
+         cat : "Alaville",
+         style : "1000-2500",
+     }, 
+     {  
+         name : "New York",
+         picture : "imgp1/ny2.jpg",
+         cat : "Alaville",
+         style : "2500-10000",
+     }, 
+     {
+         name : "Tokyo",
+         picture : "imgp1/tokyo.jpg",
+         cat : "Alaville",
+         style : "2500-10000",
+     },
+   ];  
+
+// SELECTION DES ELEMENTS PAG ACCUEIL 
 const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
 const textRevez = document.querySelector('.TextRevez');
 const lol = document.querySelector('.catButton');
+let   voyagesFiltered = cityList;
 
 
-/* LISTE IMAGES PAG 2*/
+
+
+// LISTE IMAGES PAG 2
 const imagesCards = [
   { 
     picture: "images/holiday-2831250_1280.png",
@@ -25,14 +142,14 @@ const imagesCards = [
   }
 ];
 
-/* LISTE IMAGES PAG 3 */
+// LISTE IMAGES PAG 3 //
 const imagesBudget = [
     {
    style: "500€ - 1000€",
     picture: "images/money-2831324_1280.png",
     },
     {
-        style : " 1000 - 2500€",
+        style : "1000 - 2500€",
         picture :"images/money-2831248_1280.png",
     },
     {
@@ -41,7 +158,7 @@ const imagesBudget = [
     }
 ]; 
 
-/* FONCTION POUR CRÉER LES CARDS PAG 2 */
+// FONCTION POUR CRÉER LES CARDS PAG 2 //
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -66,19 +183,74 @@ function createCard(imageUrl, textButton) {
   cardBody.appendChild(cardButton);
 
   cardButton.addEventListener("click", () => {
-    textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
-    sectionPage2.innerHTML = ""; 
-    for (let i = 0; i < imagesBudget.length; i++) {
-        createCard(imagesBudget[i].picture,imagesBudget[i].style);
-      }
 
-  });
+     if(textButton === "À la ville") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alaville");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
+        }
+         }
+      if(textButton === "À l´air frais") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alairfrais");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
+            }
+             }
+        if(textButton === "Les pieds dans l'eau") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Lespiedsdansleau");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
+                }
+                 }
+        if(textButton === "500€ - 1000€") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(voyagesFiltered[i].picture,voyagesFiltered[i].name);
+                            }
+                             }
+        if(textButton === "1000 - 2500€") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.style === "1000-2500");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(voyagesFiltered[i].picture,voyagesFiltered[i].name);
+                                                    }
+                                                     }
+        if(textButton === "2500€ - 10000€") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(voyagesFiltered[i].picture,voyagesFiltered[i].name);
+                                                                                                    }
+                                                                                                     }
+        
+
+    });   
+
+
 
 }
 
 
 
-/* EVENT PAG 1*/
+
+
+// EVENT PAG 1//
   commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
@@ -108,119 +280,7 @@ document.addEventListener("change", function (event) {
 
 
 
-/* 
-const cityList =[
-  // Les Pieds dans l'eau 
-   { 
-       name : "saint-jean de luz",
-       picture : "imgp1/sanjeandeluz.jpg",
-       cat : "Lespiedsdansleau",
-       style : "500-1000",
-   },
-   {
-       name :"san sebastian",
-       picture: "imgp1/sansebastian.jpg",
-       cat : "Lespiedsdansleau",
-       style : "500-1000",
-   },
-   {
-       name : "santorin",
-       picture : "img1/grce.jpg",
-       cat : "Lespiedsdansleau",
-       style : "1000-2500",
-   },
-   {  name : "italie",
-      picture : "imgp1/italie.jpg",
-      cat : "Lespiedsdansleau",
-      style : "1000-2500",
-   },
-   {
-       name : "seychelles",
-       picture : "imgp1/seychelles.jpg",
-       cat : "Lespiecsdansleau",
-       style : "2500-10000",
-   },
-   {
-       name : "thailande",
-       picture : "imgp1/Thailande.jpg",
-       cat : "Lespiedsdansleau",
-       style : "2500-10000",
-   },
-   // A l'air frais 
-   {
-       name : "La Suisse",
-       picture : "imgp1/suisse.jpg",
-       cat : "Alairfrais",
-       style : "500-1000",
-   },
- {
-       name : "...",
-       picture : "...",
-       cat : "Alairfrais",
-       style : "500-1000",
-   },
 
-  {
-       name : "lemontblanc",
-       picture : "imgp1/montblanc.jpg",
-       cat : "Alairfrais",
-       style : "1000-2500",
-   }, 
-   { 
-       name : "La Laponie",
-       picture : "imgp1/laponie.jp",
-       cat : "Alairfrais",
-       style : "1000-2500",
-   },
-   {
-       name : "Le Monfuji",
-       picture : "imgp1/fuji.jpg",
-       cat : "Alairfrais",
-       style : "2500-10000",
-   },
-   {
-       name : "Le Canada",
-       picture : "imgp1/canada.jpg",
-       cat : "Alairfrais",
-       style : "2500-1000",
-   },
-// A la ville 
-   { 
-       name : "Paris",
-       picture : "imgp1/paris.jpg",
-       cat : "Alaville",
-       style : "500-1000",
-   },
-   { 
-       name : "Lyon",
-       picture : "imgp1/lyon.jpg",
-       cat : "Alaville",
-       style : "500-1000",
-   },
-   {
-       name : "Londres",
-       picture : "imgp1/londres.jpg",
-       cat : "Alaville",
-       style : "1000-2500",
-   }, 
-    {
-       name : "Amsterdam",
-       picture : "imgp1/amsterdam.jpg",
-       cat : "Alaville",
-       style : "1000-2500",
-   }, 
-   {  
-       name : "newyork",
-       picture : "imgp1/ny2.jpg",
-       cat : "Alaville",
-       style : "2500-10000",
-   }, 
-   {
-       name : "Tokyo",
-       picture : "imgp1/tokyo.jpg",
-       cat : "Alaville",
-       style : "2500-10000",
-   },
- ];  
-} */
+
+
  
