@@ -16,23 +16,23 @@ const cityList =[
      },
      {
          name : "Santorin",
-         picture : "img1/grce.jpg",
+         picture : "imgp1/grce.jpg",
          cat : "Lespiedsdansleau",
          style : "1000-2500",
      },
-     {  name : "Italie",
+     {  name : "L'Italie",
         picture : "imgp1/italie.jpg",
         cat : "Lespiedsdansleau",
         style : "1000-2500",
      },
      {
-         name : "Seychelles",
+         name : "Les Seychelles",
          picture : "imgp1/seychelles.jpg",
-         cat : "Lespiecsdansleau",
+         cat : "Lespiedsdansleau",
          style : "2500-10000",
      },
      {
-         name : "Thailande",
+         name : "La Thailande",
          picture : "imgp1/Thailande.jpg",
          cat : "Lespiedsdansleau",
          style : "2500-10000",
@@ -64,7 +64,7 @@ const cityList =[
          style : "1000-2500",
      },
      {
-         name : "Le Monfuji",
+         name : "Le Mont fuji",
          picture : "imgp1/fuji.jpg",
          cat : "Alairfrais",
          style : "2500-10000",
@@ -73,7 +73,7 @@ const cityList =[
          name : "Le Canada",
          picture : "imgp1/canada.jpg",
          cat : "Alairfrais",
-         style : "2500-1000",
+         style : "2500-10000",
      },
   // A la ville 
      { 
@@ -246,14 +246,11 @@ function createCard(imageUrl, textButton) {
 
 }
 
-
-
-
-
 // EVENT PAG 1//
   commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
+  sectionPage3.style.display="none";
   textRevez.innerHTML = "Quelles sont vos envies ?";
 
 
@@ -261,6 +258,85 @@ function createCard(imageUrl, textButton) {
     createCard(imagesCards[i].picture,imagesCards[i].style);
   }
 });
+
+
+const buttonAccueil = document.querySelector(".accueilButton");
+buttonAccueil.addEventListener("click", () => {
+    sectionPage2.innerHTML = ""; 
+    logoMain.style.display = "block";
+    sectionPage3.style.display="none";
+    commencezButton.style.display = "block";
+    textRevez.innerHTML = "REVEZ DE VACANCES";
+});
+
+
+const buttonCatalogue = document.querySelector(".catalogueButton");
+
+buttonCatalogue.addEventListener("click", () => { 
+    sectionPage2.innerHTML="";
+    logoMain.style.display = "none";
+    sectionPage3.style.display="none";
+    commencezButton.style.display = "none";
+    textRevez.innerHTML = "Notre catalogue de rêve ";
+    for (let i = 0; i < cityList.length; i ++){
+        createCard(cityList[i].picture,cityList[i].name);
+    }})
+
+    const buttonContact = document.querySelector(".contactButton");
+   
+    const contacts = [
+    {
+        text: "Instagram",
+        logo: "images/logoInsta.png",
+         },
+         {
+        text : "Facebook",
+        logo :"images/logoFacebook.png",
+         },
+         {
+            text : "Adresse de notre agence",
+            logo : "images/logoLocation.png",
+         }
+        
+]
+
+const sectionPage3 = document.querySelector(".sectionPage3");
+function createDivContact(imageUrl, text) {
+    const cardContact = document.createElement("div");
+    cardContact.classList.add("card-contact");
+    sectionPage3.appendChild(cardContact);
+  
+    const headerContact = document.createElement("div");
+    headerContact.classList.add("header-contact");
+    cardContact.appendChild(headerContact);
+  
+    const imgContact = document.createElement("div");
+    imgContact.style.backgroundImage = `url(${imageUrl})`;
+    imgContact.classList.add("img-contact");
+    headerContact.appendChild(imgContact);
+  
+    const bodyContact = document.createElement("div");
+    bodyContact.classList.add("body-contact");
+    cardContact.appendChild(bodyContact);
+  
+    const textContact = document.createElement("p");
+    textContact.classList.add("text-contact");
+    textContact.innerHTML = text;
+    bodyContact.appendChild(textContact);
+}
+
+    buttonContact.addEventListener("click", () => {
+    sectionPage3.style.display = "flex";
+    sectionPage2.innerHTML="" ;
+    logoMain.style.display = "none";
+    commencezButton.style.display = "none"; 
+    textRevez.innerHTML = "Retrouvez nous ";
+    for (let i = 0; i < contacts.length; i ++){
+        createDivContact(contacts[i].logo,contacts[i].text);
+    }})
+
+    
+
 
 //EVENT MENU BURGER //
 
