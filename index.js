@@ -5,7 +5,6 @@ const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
 const textRevez = document.querySelector('.TextRevez');
-const lol = document.querySelector('.catButton');
 
 
 /* LISTE IMAGES PAG 2*/
@@ -41,6 +40,125 @@ const imagesBudget = [
     }
 ]; 
 
+const cityList =[
+
+    { 
+        name : "Saint-jean de luz",
+        picture : "imgp1/sanjeandeluz.jpg",
+        envie : "Les pieds dans l'eau",
+        pictureEnvie : "images/holiday-2831250_1280.png",
+        prix : "500€ - 1000€",
+    },
+    {
+        name :"San Sebastian",
+        picture: "imgp1/sansebastian.jpg",
+        envie : "Les pieds dans l'eau",
+        pictureEnvie : "images/holiday-2831250_1280.png",
+        prix : "500€ - 1000€",
+    },
+    {
+        name : "Santorin",
+        picture : "img1/grce.jpg",
+        envie : "Les pieds dans l'eau",
+        pictureEnvie : "images/holiday-2831250_1280.png",
+        prix : "1000€ - 2500€",
+    },
+    {  name : "L'Italie",
+       picture : "imgp1/italie.jpg",
+       envie : "Les pieds dans l'eau",
+       pictureEnvie : "images/holiday-2831250_1280.png",
+       prix : "1000€ - 2500€",
+    },
+    {
+        name : "Les Seychelles",
+        picture : "imgp1/seychelles.jpg",
+        envie : "Les pieds dans l'eau",
+        pictureEnvie : "images/holiday-2831250_1280.png",
+        prix : "2500€ - 10000€",
+    },
+    {
+        name : "La Thailande",
+        picture : "imgp1/Thailande.jpg",
+        envie : "Les pieds dans l'eau",
+        pictureEnvie : "images/holiday-2831250_1280.png",
+        prix : "2500€ - 10000€",
+    },
+    // A l'air frais 
+    {
+        name : "La Suisse",
+        picture : "imgp1/suisse.jpg",
+        envie : "A l'air frais",
+        prix : "500€ - 1000€",
+    },
+  {
+        name : "...",
+        picture : "...",
+        envie : "A l'air frais",
+        prix : "500€ - 1000€",
+    },
+ 
+   {
+        name : "Le Mont Blanc",
+        picture : "imgp1/montblanc.jpg",
+        envie : "A l'air frais",
+        prix : "1000€ - 2500€",
+    }, 
+    { 
+        name : "La Laponie",
+        picture : "imgp1/laponie.jp",
+        envie : "A l'air frais",
+        prix : "1000€ - 2500€",
+    },
+    {
+        name : "Le Monfuji",
+        picture : "imgp1/fuji.jpg",
+        envie : "A l'air frais",
+        prix : "2500€ - 10000€",
+    },
+    {
+        name : "Le Canada",
+        picture : "imgp1/canada.jpg",
+        envie : "A l'air frais",
+        prix : "2500€ - 10000€",
+    },
+ // A la ville 
+    { 
+        name : "Paris",
+        picture : "imgp1/paris.jpg",
+        envie : "A la ville",
+        prix : "500€ - 1000€",
+    },
+    { 
+        name : "Lyon",
+        picture : "imgp1/lyon.jpg",
+        envie : "A la ville",
+        prix : "500€ - 1000€",
+    },
+    {
+        name : "Londres",
+        picture : "imgp1/londres.jpg",
+        envie : "A la ville",
+        prix : "1000€ - 2500€",
+    }, 
+     {
+        name : "Amsterdam",
+        picture : "imgp1/amsterdam.jpg",
+        envie : "A la ville",
+        prix : "1000€ - 2500€",
+    }, 
+    {  
+        name : "New-York",
+        picture : "imgp1/ny2.jpg",
+        envie : "A la ville",
+        prix : "2500€ - 10000€",
+    }, 
+    {
+        name : "Tokyo",
+        picture : "imgp1/tokyo.jpg",
+        envie : "A la ville",
+        prix : "2500€ - 10000€",
+    }
+  ];  
 /* FONCTION POUR CRÉER LES CARDS PAG 2 */
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
@@ -65,32 +183,33 @@ function createCard(imageUrl, textButton) {
   cardButton.innerHTML = textButton;
   cardBody.appendChild(cardButton);
 
-  cardButton.addEventListener("click", () => {
+     cardButton.addEventListener("click", () => {
     textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
     sectionPage2.innerHTML = ""; 
     for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture,imagesBudget[i].style);
       }
-
   });
+
 
 }
 
 
 
-/* EVENT PAG 1*/
+
+
+/*EVENT PAG 1*/
   commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
   textRevez.innerHTML = "Quelles sont vos envies ?";
-
-
-  for (let i = 0; i < imagesCards.length; i++) {
-    createCard(imagesCards[i].picture,imagesCards[i].style);
+  for (let i = 0; i < cityList.length; i++) {
+   createCard(cityList[i].picture,cityList[i].envie);
   }
-});
+  });
 
-//EVENT MENU BURGER //
+
+/*EVENT MENU BURGER */
 
 document.addEventListener("change", function (event) {
     const menuList = document.querySelector("#menu");
@@ -103,124 +222,3 @@ document.addEventListener("change", function (event) {
     }
 });
 
-
-
-
-
-
-/* 
-const cityList =[
-  // Les Pieds dans l'eau 
-   { 
-       name : "saint-jean de luz",
-       picture : "imgp1/sanjeandeluz.jpg",
-       cat : "Lespiedsdansleau",
-       style : "500-1000",
-   },
-   {
-       name :"san sebastian",
-       picture: "imgp1/sansebastian.jpg",
-       cat : "Lespiedsdansleau",
-       style : "500-1000",
-   },
-   {
-       name : "santorin",
-       picture : "img1/grce.jpg",
-       cat : "Lespiedsdansleau",
-       style : "1000-2500",
-   },
-   {  name : "italie",
-      picture : "imgp1/italie.jpg",
-      cat : "Lespiedsdansleau",
-      style : "1000-2500",
-   },
-   {
-       name : "seychelles",
-       picture : "imgp1/seychelles.jpg",
-       cat : "Lespiecsdansleau",
-       style : "2500-10000",
-   },
-   {
-       name : "thailande",
-       picture : "imgp1/Thailande.jpg",
-       cat : "Lespiedsdansleau",
-       style : "2500-10000",
-   },
-   // A l'air frais 
-   {
-       name : "La Suisse",
-       picture : "imgp1/suisse.jpg",
-       cat : "Alairfrais",
-       style : "500-1000",
-   },
- {
-       name : "...",
-       picture : "...",
-       cat : "Alairfrais",
-       style : "500-1000",
-   },
-
-  {
-       name : "lemontblanc",
-       picture : "imgp1/montblanc.jpg",
-       cat : "Alairfrais",
-       style : "1000-2500",
-   }, 
-   { 
-       name : "La Laponie",
-       picture : "imgp1/laponie.jp",
-       cat : "Alairfrais",
-       style : "1000-2500",
-   },
-   {
-       name : "Le Monfuji",
-       picture : "imgp1/fuji.jpg",
-       cat : "Alairfrais",
-       style : "2500-10000",
-   },
-   {
-       name : "Le Canada",
-       picture : "imgp1/canada.jpg",
-       cat : "Alairfrais",
-       style : "2500-1000",
-   },
-// A la ville 
-   { 
-       name : "Paris",
-       picture : "imgp1/paris.jpg",
-       cat : "Alaville",
-       style : "500-1000",
-   },
-   { 
-       name : "Lyon",
-       picture : "imgp1/lyon.jpg",
-       cat : "Alaville",
-       style : "500-1000",
-   },
-   {
-       name : "Londres",
-       picture : "imgp1/londres.jpg",
-       cat : "Alaville",
-       style : "1000-2500",
-   }, 
-    {
-       name : "Amsterdam",
-       picture : "imgp1/amsterdam.jpg",
-       cat : "Alaville",
-       style : "1000-2500",
-   }, 
-   {  
-       name : "newyork",
-       picture : "imgp1/ny2.jpg",
-       cat : "Alaville",
-       style : "2500-10000",
-   }, 
-   {
-       name : "Tokyo",
-       picture : "imgp1/tokyo.jpg",
-       cat : "Alaville",
-       style : "2500-10000",
-   },
- ];  
-} */
- 
