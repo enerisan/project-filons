@@ -1,13 +1,131 @@
-/* INTERACTION PAGE 1-2 */
 
-/* SELECTION DES ELEMENTS PAG ACCUEIL */
+//LISTE DESTINATIONS 
+const cityList =[
+    // Les Pieds dans l'eau 
+     { 
+         name : "Saint-Jean de Luz",
+         picture : "imgp1/sanjeandeluz.jpg",
+         cat : "Lespiedsdansleau",
+         style : "500-1000",
+     },
+     {
+         name :"San Sebastián",
+         picture: "imgp1/sansebastian.jpg",
+         cat : "Lespiedsdansleau",
+         style : "500-1000",
+     },
+     {
+         name : "Santorin",
+         picture : "imgp1/grce.jpg",
+         cat : "Lespiedsdansleau",
+         style : "1000-2500",
+     },
+     {  name : "L'Italie",
+        picture : "imgp1/italie.jpg",
+        cat : "Lespiedsdansleau",
+        style : "1000-2500",
+     },
+     {
+         name : "Les Seychelles",
+         picture : "imgp1/seychelles.jpg",
+         cat : "Lespiedsdansleau",
+         style : "2500-10000",
+     },
+     {
+         name : "La Thailande",
+         picture : "imgp1/Thailande.jpg",
+         cat : "Lespiedsdansleau",
+         style : "2500-10000",
+     },
+     // A l'air frais 
+     {
+         name : "La Suisse",
+         picture : "imgp1/suisse.jpg",
+         cat : "Alairfrais",
+         style : "500-1000",
+     },
+   {
+         name : "...",
+         picture : "...",
+         cat : "Alairfrais",
+         style : "500-1000",
+     },
+  
+    {
+         name : "Le Mont Blanc",
+         picture : "imgp1/montblanc.jpg",
+         cat : "Alairfrais",
+         style : "1000-2500",
+     }, 
+     { 
+         name : "La Laponie",
+         picture : "imgp1/laponie.jpg",
+         cat : "Alairfrais",
+         style : "1000-2500",
+     },
+     {
+         name : "Le Mont fuji",
+         picture : "imgp1/fuji.jpg",
+         cat : "Alairfrais",
+         style : "2500-10000",
+     },
+     {
+         name : "Le Canada",
+         picture : "imgp1/canada.jpg",
+         cat : "Alairfrais",
+         style : "2500-10000",
+     },
+  // A la ville 
+     { 
+         name : "Paris",
+         picture : "imgp1/paris.jpg",
+         cat : "Alaville",
+         style : "500-1000",
+     },
+     { 
+         name : "Lyon",
+         picture : "imgp1/lyon.jpg",
+         cat : "Alaville",
+         style : "500-1000",
+     },
+     {
+         name : "Londres",
+         picture : "imgp1/londres.jpg",
+         cat : "Alaville",
+         style : "1000-2500",
+     }, 
+      {
+         name : "Amsterdam",
+         picture : "imgp1/amsterdam.jpg",
+         cat : "Alaville",
+         style : "1000-2500",
+     }, 
+     {  
+         name : "New York",
+         picture : "imgp1/ny2.jpg",
+         cat : "Alaville",
+         style : "2500-10000",
+     }, 
+     {
+         name : "Tokyo",
+         picture : "imgp1/tokyo.jpg",
+         cat : "Alaville",
+         style : "2500-10000",
+     },
+   ];  
+
+// SELECTION DES ELEMENTS PAG ACCUEIL 
 const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
 const textRevez = document.querySelector('.TextRevez');
+const lol = document.querySelector('.catButton');
+let   voyagesFiltered = cityList;
 
 
-/* LISTE IMAGES PAG 2*/
+
+
+// LISTE IMAGES PAG 2
 const imagesCards = [
   { 
     picture: "images/holiday-2831250_1280.png",
@@ -24,14 +142,14 @@ const imagesCards = [
   }
 ];
 
-/* LISTE IMAGES PAG 3 */
+// LISTE IMAGES PAG 3 //
 const imagesBudget = [
     {
    style: "500€ - 1000€",
     picture: "images/money-2831324_1280.png",
     },
     {
-        style : " 1000 - 2500€",
+        style : "1000 - 2500€",
         picture :"images/money-2831248_1280.png",
     },
     {
@@ -40,126 +158,7 @@ const imagesBudget = [
     }
 ]; 
 
-const cityList =[
-
-    { 
-        name : "Saint-jean de luz",
-        picture : "imgp1/sanjeandeluz.jpg",
-        envie : "Les pieds dans l'eau",
-        pictureEnvie : "images/holiday-2831250_1280.png",
-        prix : "500€ - 1000€",
-    },
-    {
-        name :"San Sebastian",
-        picture: "imgp1/sansebastian.jpg",
-        envie : "Les pieds dans l'eau",
-        pictureEnvie : "images/holiday-2831250_1280.png",
-        prix : "500€ - 1000€",
-    },
-    {
-        name : "Santorin",
-        picture : "img1/grce.jpg",
-        envie : "Les pieds dans l'eau",
-        pictureEnvie : "images/holiday-2831250_1280.png",
-        prix : "1000€ - 2500€",
-    },
-    {  name : "L'Italie",
-       picture : "imgp1/italie.jpg",
-       envie : "Les pieds dans l'eau",
-       pictureEnvie : "images/holiday-2831250_1280.png",
-       prix : "1000€ - 2500€",
-    },
-    {
-        name : "Les Seychelles",
-        picture : "imgp1/seychelles.jpg",
-        envie : "Les pieds dans l'eau",
-        pictureEnvie : "images/holiday-2831250_1280.png",
-        prix : "2500€ - 10000€",
-    },
-    {
-        name : "La Thailande",
-        picture : "imgp1/Thailande.jpg",
-        envie : "Les pieds dans l'eau",
-        pictureEnvie : "images/holiday-2831250_1280.png",
-        prix : "2500€ - 10000€",
-    },
-    // A l'air frais 
-    {
-        name : "La Suisse",
-        picture : "imgp1/suisse.jpg",
-        envie : "A l'air frais",
-        prix : "500€ - 1000€",
-    },
-  {
-        name : "...",
-        picture : "...",
-        envie : "A l'air frais",
-        prix : "500€ - 1000€",
-    },
- 
-   {
-        name : "Le Mont Blanc",
-        picture : "imgp1/montblanc.jpg",
-        envie : "A l'air frais",
-        prix : "1000€ - 2500€",
-    }, 
-    { 
-        name : "La Laponie",
-        picture : "imgp1/laponie.jp",
-        envie : "A l'air frais",
-        prix : "1000€ - 2500€",
-    },
-    {
-        name : "Le Monfuji",
-        picture : "imgp1/fuji.jpg",
-        envie : "A l'air frais",
-        prix : "2500€ - 10000€",
-    },
-    {
-        name : "Le Canada",
-        picture : "imgp1/canada.jpg",
-        envie : "A l'air frais",
-        prix : "2500€ - 10000€",
-    },
- // A la ville 
-    { 
-        name : "Paris",
-        picture : "imgp1/paris.jpg",
-        envie : "A la ville",
-        prix : "500€ - 1000€",
-    },
-    { 
-        name : "Lyon",
-        picture : "imgp1/lyon.jpg",
-        envie : "A la ville",
-        prix : "500€ - 1000€",
-    },
-    {
-        name : "Londres",
-        picture : "imgp1/londres.jpg",
-        envie : "A la ville",
-        prix : "1000€ - 2500€",
-    }, 
-     {
-        name : "Amsterdam",
-        picture : "imgp1/amsterdam.jpg",
-        envie : "A la ville",
-        prix : "1000€ - 2500€",
-    }, 
-    {  
-        name : "New-York",
-        picture : "imgp1/ny2.jpg",
-        envie : "A la ville",
-        prix : "2500€ - 10000€",
-    }, 
-    {
-        name : "Tokyo",
-        picture : "imgp1/tokyo.jpg",
-        envie : "A la ville",
-        prix : "2500€ - 10000€",
-    }
-  ];  
-/* FONCTION POUR CRÉER LES CARDS PAG 2 */
+// FONCTION POUR CRÉER LES CARDS PAG 2 //
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -183,33 +182,163 @@ function createCard(imageUrl, textButton) {
   cardButton.innerHTML = textButton;
   cardBody.appendChild(cardButton);
 
-     cardButton.addEventListener("click", () => {
-    textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
-    sectionPage2.innerHTML = ""; 
-    for (let i = 0; i < imagesBudget.length; i++) {
+  cardButton.addEventListener("click", () => {
+
+     if(textButton === "À la ville") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alaville");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture,imagesBudget[i].style);
-      }
-  });
+        }
+         }
+      if(textButton === "À l´air frais") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alairfrais");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
+            }
+             }
+        if(textButton === "Les pieds dans l'eau") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Lespiedsdansleau");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(imagesBudget[i].picture,imagesBudget[i].style);
+                }
+                 }
+        if(textButton === "500€ - 1000€") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(voyagesFiltered[i].picture,voyagesFiltered[i].name);
+                            }
+                             }
+        if(textButton === "1000 - 2500€") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.style === "1000-2500");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(voyagesFiltered[i].picture,voyagesFiltered[i].name);
+                                                    }
+                                                     }
+        if(textButton === "2500€ - 10000€") {
+        voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
+        console.log(voyagesFiltered);
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
+        sectionPage2.innerHTML = ""; 
+        for (let i = 0; i < imagesBudget.length; i++) {
+        createCard(voyagesFiltered[i].picture,voyagesFiltered[i].name);
+                                                                                                    }
+                                                                                                     }
+        
+
+    });   
+
 
 
 }
 
-
-
-
-
-/*EVENT PAG 1*/
+// EVENT PAG 1//
   commencezButton.addEventListener("click", () => {
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
+  sectionPage3.style.display="none";
   textRevez.innerHTML = "Quelles sont vos envies ?";
-  for (let i = 0; i < cityList.length; i++) {
-   createCard(cityList[i].picture,cityList[i].envie);
+
+
+  for (let i = 0; i < imagesCards.length; i++) {
+    createCard(imagesCards[i].picture,imagesCards[i].style);
   }
-  });
+});
 
 
-/*EVENT MENU BURGER */
+const buttonAccueil = document.querySelector(".accueilButton");
+buttonAccueil.addEventListener("click", () => {
+    sectionPage2.innerHTML = ""; 
+    logoMain.style.display = "block";
+    sectionPage3.style.display="none";
+    commencezButton.style.display = "block";
+    textRevez.innerHTML = "REVEZ DE VACANCES";
+});
+
+
+const buttonCatalogue = document.querySelector(".catalogueButton");
+
+buttonCatalogue.addEventListener("click", () => { 
+    sectionPage2.innerHTML="";
+    logoMain.style.display = "none";
+    sectionPage3.style.display="none";
+    commencezButton.style.display = "none";
+    textRevez.innerHTML = "Notre catalogue de rêve ";
+    for (let i = 0; i < cityList.length; i ++){
+        createCard(cityList[i].picture,cityList[i].name);
+    }})
+
+    const buttonContact = document.querySelector(".contactButton");
+   
+    const contacts = [
+    {
+        text: "Instagram",
+        logo: "images/logoInsta.png",
+         },
+         {
+        text : "Facebook",
+        logo :"images/logoFacebook.png",
+         },
+         {
+            text : "Adresse de notre agence",
+            logo : "images/logoLocation.png",
+         }
+        
+]
+
+const sectionPage3 = document.querySelector(".sectionPage3");
+function createDivContact(imageUrl, text) {
+    const cardContact = document.createElement("div");
+    cardContact.classList.add("card-contact");
+    sectionPage3.appendChild(cardContact);
+  
+    const headerContact = document.createElement("div");
+    headerContact.classList.add("header-contact");
+    cardContact.appendChild(headerContact);
+  
+    const imgContact = document.createElement("div");
+    imgContact.style.backgroundImage = `url(${imageUrl})`;
+    imgContact.classList.add("img-contact");
+    headerContact.appendChild(imgContact);
+  
+    const bodyContact = document.createElement("div");
+    bodyContact.classList.add("body-contact");
+    cardContact.appendChild(bodyContact);
+  
+    const textContact = document.createElement("p");
+    textContact.classList.add("text-contact");
+    textContact.innerHTML = text;
+    bodyContact.appendChild(textContact);
+}
+
+    buttonContact.addEventListener("click", () => {
+    sectionPage3.style.display = "flex";
+    sectionPage2.innerHTML="" ;
+    logoMain.style.display = "none";
+    commencezButton.style.display = "none"; 
+    textRevez.innerHTML = "Retrouvez nous ";
+    for (let i = 0; i < contacts.length; i ++){
+        createDivContact(contacts[i].logo,contacts[i].text);
+    }})
+
+    
+
+
+//EVENT MENU BURGER //
 
 document.addEventListener("change", function (event) {
     const menuList = document.querySelector("#menu");
@@ -222,3 +351,12 @@ document.addEventListener("change", function (event) {
     }
 });
 
+
+
+
+
+
+
+
+
+ 
