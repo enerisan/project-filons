@@ -63,7 +63,7 @@ nav {
 }
 
 .logo {
-  width: 8rem;
+  width: 4rem;
   margin-left: 1rem;
 }
 
@@ -100,16 +100,30 @@ header div ul {
   position: relative;
   padding: 0;
   margin: 0;
-  background-color: #1f5a50;
-  
-  
+  background-color: #1f5a50; 
 }
 
 #menuToggle {
   display: none;
-  list-style: none;
-  
+  list-style: none; 
 }
+
+#accueilNav{
+  display: none;
+}
+
+
+.accueilButton,.catalogueButton,.contactButton{
+  background-color: #f1e6d8;
+ padding: 0.0rem 4rem;
+  border-radius: 15px;
+  color: var(--color-navbar);
+  font-size: 0.5rem;
+  
+  font-weight: bold;
+  width: 3rem;
+}
+
 
 body {
   box-sizing: border-box;
@@ -118,8 +132,8 @@ body {
 }
 
 main { 
-/*   margin-top : 5rem; */
-  margin-bottom: 5rem;
+  margin-top : 8rem; 
+  margin-bottom: 6rem;
 }
 
 .main-page-1 {
@@ -128,6 +142,7 @@ main {
   justify-content: center;
   align-items: center;
   color: var(--color-button);
+  margin-top: 3rem;
 }
 
 .logo-main {
@@ -136,7 +151,7 @@ main {
 } 
 main h2 {
   font-size: 1.5rem;
-margin-top: 0;
+   margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
@@ -145,22 +160,13 @@ main button {
   padding: 1rem 2rem;
   border-radius: 15px;
   color: white;
+  margin-top: 1rem;
   
 }
 
-.sectionPage2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-
-
 footer {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 15rem;
 }
 
 
@@ -171,13 +177,15 @@ footer {
 }
 
 .sectionPage2 {
+
   display: flex;
   justify-content: center;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
   gap : 1rem;
- 
+
 }
 
 .card-img {
@@ -185,11 +193,7 @@ footer {
   background-position: center;
   background-image: url("");
   width: 100%;
-  height: 20rem;
-  
-  
-  
-
+  height: 13rem;
 }
 .card {
   border-radius: 10px ;
@@ -199,8 +203,6 @@ footer {
   flex-direction: column;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 20rem;
-  
- 
 }
 
 .card-body {
@@ -214,6 +216,44 @@ footer {
   height: 50px;
   gap : 10rem;  width: 100%;
 }
+
+.TextRevez{
+  text-align: center;
+  max-width: 30ch;
+}
+
+.sectionPage3{
+  
+  flex-direction: column;
+  align-items: center;
+  gap : 2rem
+}
+
+
+
+
+.img-contact {
+  background-size: cover;
+  background-position: center;
+  background-image: url("");
+
+  width: 250px;
+  height: 13rem;
+}
+
+.card-contact {
+  border-radius: 10px ;
+  border : 1px solid #1bb45d;
+
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 20rem;
+}
+.body-contact {
+  padding: 10px 20px;
+}
+
+
 
 @media screen and (min-width : 992px){
 
@@ -242,6 +282,8 @@ main h2 {
  
   }
 
-
+footer{
+  margin-top: 10rem;
+}
 
 }
