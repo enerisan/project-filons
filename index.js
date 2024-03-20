@@ -325,9 +325,9 @@ function createDivContact(imageUrl, text) {
 }
 
     buttonContact.addEventListener("click", () => {
-    sectionPage3.style.display = "flex";
-    sectionPage2.innerHTML="" ;
-    logoMain.style.display = "none";
+        sectionPage2.innerHTML="";
+        sectionPage3.style.display = "flex";
+       logoMain.style.display = "none";
     commencezButton.style.display = "none"; 
     textRevez.innerHTML = "Retrouvez nous ";
     for (let i = 0; i < contacts.length; i ++){
