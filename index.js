@@ -16,23 +16,23 @@ const cityList =[
      },
      {
          name : "Santorin",
-         picture : "img1/grce.jpg",
+         picture : "imgp1/grce.jpg",
          cat : "Lespiedsdansleau",
          style : "1000-2500",
      },
-     {  name : "Italie",
+     {  name : "L´Italie",
         picture : "imgp1/italie.jpg",
         cat : "Lespiedsdansleau",
         style : "1000-2500",
      },
      {
-         name : "Seychelles",
+         name : "Les Seychelles",
          picture : "imgp1/seychelles.jpg",
-         cat : "Lespiecsdansleau",
+         cat : "Lespiedsdansleau",
          style : "2500-10000",
      },
      {
-         name : "Thailande",
+         name : "La Thailande",
          picture : "imgp1/Thailande.jpg",
          cat : "Lespiedsdansleau",
          style : "2500-10000",
@@ -64,7 +64,7 @@ const cityList =[
          style : "1000-2500",
      },
      {
-         name : "Le Monfuji",
+         name : "Le Mont Fuji",
          picture : "imgp1/fuji.jpg",
          cat : "Alairfrais",
          style : "2500-10000",
@@ -73,7 +73,7 @@ const cityList =[
          name : "Le Canada",
          picture : "imgp1/canada.jpg",
          cat : "Alairfrais",
-         style : "2500-1000",
+         style : "2500-10000",
      },
   // A la ville 
      { 
@@ -119,7 +119,6 @@ const commencezButton = document.getElementById('btn-commencer');
 const sectionPage2 = document.querySelector('.sectionPage2');
 const logoMain = document.querySelector('.logo-main');
 const textRevez = document.querySelector('.TextRevez');
-const lol = document.querySelector('.catButton');
 let   voyagesFiltered = cityList;
 
 
@@ -138,7 +137,7 @@ const imagesCards = [
   {
     picture: "images/town-36095_1280.png",
     style:"À la ville",
-    names : "200"
+   
   }
 ];
 
@@ -186,7 +185,7 @@ function createCard(imageUrl, textButton) {
 
      if(textButton === "À la ville") {
         voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alaville");
-        console.log(voyagesFiltered);
+       
         textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
         sectionPage2.innerHTML = ""; 
         for (let i = 0; i < imagesBudget.length; i++) {
@@ -195,7 +194,7 @@ function createCard(imageUrl, textButton) {
          }
       if(textButton === "À l´air frais") {
         voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alairfrais");
-        console.log(voyagesFiltered);
+        
         textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
         sectionPage2.innerHTML = ""; 
         for (let i = 0; i < imagesBudget.length; i++) {
@@ -204,7 +203,7 @@ function createCard(imageUrl, textButton) {
              }
         if(textButton === "Les pieds dans l'eau") {
         voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Lespiedsdansleau");
-        console.log(voyagesFiltered);
+       
         textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
         sectionPage2.innerHTML = ""; 
         for (let i = 0; i < imagesBudget.length; i++) {
@@ -213,7 +212,7 @@ function createCard(imageUrl, textButton) {
                  }
         if(textButton === "500€ - 1000€") {
         voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
-        console.log(voyagesFiltered);
+       
         textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent : ";
         sectionPage2.innerHTML = ""; 
         for (let i = 0; i < imagesBudget.length; i++) {
