@@ -119,8 +119,12 @@ const commencezButton = document.getElementById("btn-commencer");
 const sectionPage2 = document.querySelector(".sectionPage2");
 const logoMain = document.querySelector(".logo-main");
 const textRevez = document.querySelector(".TextRevez");
-const lol = document.querySelector(".catButton");
 let voyagesFiltered = cityList;
+const userInput = document.querySelector(".userInput");
+let userName;
+
+//
+
 
 // LISTE IMAGES PAG 2
 const imagesCards = [
@@ -155,7 +159,7 @@ const imagesBudget = [
   },
 ];
 
-// FONCTION POUR CRÉER LES CARDS PAG 2 //
+// FONCTION POUR CRÉER LES CARDS  //
 function createCard(imageUrl, textButton) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -180,11 +184,13 @@ function createCard(imageUrl, textButton) {
   cardBody.appendChild(cardButton);
 
   cardButton.addEventListener("click", () => {
+ 
+    textRevez.innerHTML =`Séléctionnez un budget pour 1 semaine de vancances`;
+    
     if (textButton === "À la ville") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alaville");
-      console.log(voyagesFiltered);
-      textRevez.innerHTML =
-        "Séléctionnez un budget pour 1 semaine de vancances";
+      
+  
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture, imagesBudget[i].style);
@@ -192,9 +198,8 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "À l´air frais") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alairfrais");
-      console.log(voyagesFiltered);
-      textRevez.innerHTML =
-        "Séléctionnez un budget pour 1 semaine de vancances";
+   
+   
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture, imagesBudget[i].style);
@@ -204,9 +209,8 @@ function createCard(imageUrl, textButton) {
       voyagesFiltered = voyagesFiltered.filter(
         (v) => v.cat === "Lespiedsdansleau"
       );
-      console.log(voyagesFiltered);
-      textRevez.innerHTML =
-        "Séléctionnez un budget pour 1 semaine de vancances";
+      
+   
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture, imagesBudget[i].style);
@@ -214,7 +218,7 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "500€ - 1000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
-      console.log(voyagesFiltered);
+    
       textRevez.innerHTML =
         "Nous vous proposons deux destinations qui vous correspondent : ";
       sectionPage2.innerHTML = "";
@@ -224,9 +228,14 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "1000 - 2500€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "1000-2500");
-      console.log(voyagesFiltered);
+
+      const userName = localStorage.getItem("userName");
+      if(userName){
       textRevez.innerHTML =
-        "Nous vous proposons deux destinations qui vous correspondent : ";
+        `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+      }else {
+        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent :";
+      }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -234,7 +243,7 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "2500€ - 10000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
-      console.log(voyagesFiltered);
+
       textRevez.innerHTML =
         "Nous vous proposons deux destinations qui vous correspondent : ";
       sectionPage2.innerHTML = "";
@@ -245,27 +254,50 @@ function createCard(imageUrl, textButton) {
   });
 }
 
-// EVENT PAG 1//
+
+
+const buttonAccueil = document.querySelector(".accueilButton");
+buttonAccueil.addEventListener("click", () => {
+
+  sectionPage2.innerHTML = "";
+  logoMain.style.display = "block";
+  sectionPage3.style.display = "none";
+  commencezButton.style.display = "block";
+  textRevez.innerHTML = "REVEZ DE VACANCES";
+  voyagesFiltered = cityList;
+
+  
+
+});
+
+// INTERACTION BUTTON  COMMENCER 
 commencezButton.addEventListener("click", () => {
-  logoMain.style.display = "none";
+   
+//stockage 
+const userName = userInput.value;
+localStorage.setItem("userName", userName);
+console.log(userName);
+
+
+//
+userInput.style.display = "none";
+logoMain.style.display = "none";
   commencezButton.style.display = "none";
   sectionPage3.style.display = "none";
-  textRevez.innerHTML = "Quelles sont vos envies ?";
+
+if (userName) {
+  textRevez.innerHTML = ` ${userName}, quelles sont vos envies ?`;
+} else {
+  textRevez.innerHTML = `Quelles sont vos envies ?`;
+}
 
   for (let i = 0; i < imagesCards.length; i++) {
     createCard(imagesCards[i].picture, imagesCards[i].style);
   }
 });
 
-const buttonAccueil = document.querySelector(".accueilButton");
-buttonAccueil.addEventListener("click", () => {
-  sectionPage2.innerHTML = "";
-  logoMain.style.display = "block";
-  sectionPage3.style.display = "none";
-  commencezButton.style.display = "block";
-  textRevez.innerHTML = "REVEZ DE VACANCES";
-});
 
+// INTERACTION BUTTON  CATALOGUE
 const buttonCatalogue = document.querySelector(".catalogueButton");
 
 buttonCatalogue.addEventListener("click", () => {
@@ -291,16 +323,14 @@ const contacts = [
     logo: "images/logoFacebook.png",
   },
   {
-    text: "Adresse de notre agence",
+    text: "Notre adresse",
     logo: "images/logoLocation.png",
   },
 ];
 
 const sectionPage3 = document.querySelector(".sectionPage3");
 function createDivContact(imageUrl, text) {
-  const cardContact = document.createElement("div");
-  cardContact.classList.add("card-contact");
-  sectionPage2.appendChild(cardContact);
+  
 
   const headerContact = document.createElement("div");
   headerContact.classList.add("header-contact");
