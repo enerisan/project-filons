@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sura:wght@400;700&display=swap');
+
 * {
   /* background-color: #f1e6d8; */
   box-sizing: border-box;
@@ -13,7 +15,8 @@
 
 nav {
   height: 5rem;
-  background-color: #1f5a50;
+  background-color:  #1f5a50;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +24,7 @@ nav {
 }
 
 .logo {
-  width: 4rem;
+  width: 6rem;
   margin-left: 1rem;
 }
 
@@ -74,6 +77,8 @@ header div ul {
 }
 
 .accueilButton,.catalogueButton,.contactButton{
+  display : flex;
+  justify-content: center;
   background-color: #f1e6d8;
   padding: .1rem 0.2rem;
   border-radius: 10px;
@@ -81,12 +86,15 @@ header div ul {
   text-align: left;
   font-size: 0.6rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .accueilButton:hover{ 
   background : #7ed957;
   color: #fff;
   border-color: #7ed957;
+
 }
 
 .catalogueButton:hover{
@@ -125,24 +133,34 @@ main h2 {
   font-size: 1.8rem;
    margin-top: 3rem;
   margin-bottom: 2rem;
+  
 }
 
-main button {
-  background-color: #127646;
-  padding: 1rem 2rem;
-  border-radius: 15px;
-  color: white;
-  margin-top: 1rem;
+.userInput{ 
+  background-color: #f1e6d8;
+  border-radius: 1rem;
+  text-align: center;
+  color : green;
+  font-weight: bold;
+  font-size: 1rem;
+  border : 1.9px solid #1bb45d;
 }
+
 /* animations button main*/
 main button {
   background-color: #127646;
   padding: 1rem 2rem;
   border-radius: 15px;
   color: white;
+  font-size: 1.05rem;
   margin-top: 1rem;
   cursor: pointer;
   transition: 0.2s;
+  font-size: 1.1rem;
+  display : flex ; 
+  align-items: center ;
+  justify-content: center;
+  
 }
 
 main button:hover {
@@ -150,6 +168,7 @@ main button:hover {
 }
 
 #btn-commencer {
+  
   transition: 0.2s;
 }
 
@@ -175,10 +194,9 @@ main button:hover {
 }
 
 
-
 footer {
   text-align: center;
-  margin-top: 15rem;
+  margin-top: 13rem;
 }
 
 .logo-rs {
@@ -198,20 +216,28 @@ footer {
 }
 
 .card-img {
-  background-size: cover;
+  display : flex ;
+  background-size:cover;
   background-position: center;
   background-image: url("");
   width: 100%;
   height: 14rem;
+  border-radius: 10px 10px 0px 0px;
 }
+
+
 .card {
   border-radius: 10px ;
   border : 1px solid #1bb45d;
-  
   display: block;
   flex-direction: column;
   box-shadow: rgba(35, 52, 2, 0.2) 8px 8px 18px;
   width: 20rem;
+
+}
+
+.card:hover{
+  width: 21rem;
 }
 
 .card-body {
@@ -272,6 +298,11 @@ font-size: 0.9rem;
 .card-contact .button-contact {
 margin-bottom: 1rem;
 background-color:#1bb45d;
+width: 11rem;
+}
+
+.card-contact .button-contact:hover{
+  width: 12rem;
 }
 
 .sectionPage3 { 
@@ -282,6 +313,12 @@ background-color:#1bb45d;
   .burger-menu{
  font-size: 1.2rem;
  margin-right: 3.5rem;
+}
+
+.accueilButton,.catalogueButton,.contactButton {
+  width: 5rem;
+  padding: 0.5rem 3rem;
+  font-size: 10px;
 }
 
 .accueilButton,.catalogueButton,.contactButton{
@@ -299,9 +336,12 @@ background-color:#1bb45d;
 
 main {
     margin-top : 5rem ;
-    margin-bottom: 3rem;
-
   }
+
+main button {
+  font-size: 1.2rem;
+}
+
 .logo-main { 
   width: 35rem;;
 }
@@ -310,9 +350,6 @@ main h2 {
     font-size: 2.5rem;
   }
 
-  /* .sectionPage2{
-    padding-bottom: rem;
-  } */
 
 .sectionPage2,.card{
  flex-direction: row;
@@ -320,8 +357,8 @@ main h2 {
  gap : 3rem;
 
   }
-
-footer{
-  margin-top: 10rem;
+footer { 
+  margin-top: 4rem;
 }
+
 }

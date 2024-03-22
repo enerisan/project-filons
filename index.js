@@ -32,7 +32,7 @@ const cityList = [
     style: "2500-10000",
   },
   {
-    name: "La Thailande",
+    name: "La Thaïlande",
     picture: "imgp1/Thailande.jpg",
     cat: "Lespiedsdansleau",
     style: "2500-10000",
@@ -121,12 +121,9 @@ const logoMain = document.querySelector(".logo-main");
 const textRevez = document.querySelector(".TextRevez");
 let voyagesFiltered = cityList;
 const userInput = document.querySelector(".userInput");
-let userName;
+let userName; 
 
-//
-
-
-// LISTE IMAGES PAG 2
+// LISTE ENVIES PAG 2
 const imagesCards = [
   {
     picture: "images/holiday-2831250_1280.png",
@@ -134,23 +131,22 @@ const imagesCards = [
   },
   {
     picture: "images/mountains-6964679_1280.png",
-    style: "À l´air frais",
+    style: "À l'air frais",
   },
   {
     picture: "images/town-36095_1280.png",
     style: "À la ville",
-    
   },
 ];
 
-// LISTE IMAGES PAG 3 //
+// LISTE BUDGET PAG 3 //
 const imagesBudget = [
   {
     style: "500€ - 1000€",
     picture: "images/money-2831324_1280.png",
   },
   {
-    style: "1000 - 2500€",
+    style: "1000€ - 2500€",
     picture: "images/money-2831248_1280.png",
   },
   {
@@ -189,17 +185,15 @@ function createCard(imageUrl, textButton) {
     
     if (textButton === "À la ville") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alaville");
-      
-  
+      textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture, imagesBudget[i].style);
       }
     }
-    if (textButton === "À l´air frais") {
+    if (textButton === "À l'air frais") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.cat === "Alairfrais");
-   
-   
+      textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture, imagesBudget[i].style);
@@ -209,38 +203,38 @@ function createCard(imageUrl, textButton) {
       voyagesFiltered = voyagesFiltered.filter(
         (v) => v.cat === "Lespiedsdansleau"
       );
-      
-   
+      textRevez.innerHTML = "Séléctionnez un budget pour 1 semaine de vancances";
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(imagesBudget[i].picture, imagesBudget[i].style);
       }
     }
     if (textButton === "500€ - 1000€") {
+
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
-    
       const userName = localStorage.getItem("userName");
-      if(userName){          
+      if(userName){
+
         textRevez.innerHTML =
           `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
         }else {
-          textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent :";
+          textRevez.innerHTML = "Voici deux destinations qui vous correspondent :";
         }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
       }
     }
-    if (textButton === "1000 - 2500€") {
+    if (textButton === "1000€ - 2500€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "1000-2500");
-
       const userName = localStorage.getItem("userName");
       if(userName){
-      textRevez.innerHTML =
-        `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
-      }else {
-        textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent :";
-      }
+
+        textRevez.innerHTML =
+          `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+        }else {
+          textRevez.innerHTML = "Voici deux destinations qui vous correspondent :";
+        }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -250,11 +244,13 @@ function createCard(imageUrl, textButton) {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
       const userName = localStorage.getItem("userName");
       if(userName){
+
         textRevez.innerHTML =
           `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
         }else {
-          textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent :";
+          textRevez.innerHTML = "Voici deux destinations qui vous correspondent :";
         }
+   
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -263,50 +259,47 @@ function createCard(imageUrl, textButton) {
   });
 }
 
+// INTERACTION BUTTON  COMMENCER 
+commencezButton.addEventListener("click", () => {
 
+  //stockage 
+  const userName = userInput.value;
+  localStorage.setItem("userName", userName);
+  
+  
+  
+  //
+  userInput.style.display = "none";
+  logoMain.style.display = "none";
+    commencezButton.style.display = "none";
+    sectionPage3.style.display = "none";
+  
+  if (userName) {
+    textRevez.innerHTML =  `${userName}, quelles sont vos envies ?`;
+  } else {
+    textRevez.innerHTML = "Quelles sont vos envies ?";
+  }
+  
+    for (let i = 0; i < imagesCards.length; i++) {
+      createCard(imagesCards[i].picture, imagesCards[i].style);
+    }
+  });
+  
 
 const buttonAccueil = document.querySelector(".accueilButton");
 buttonAccueil.addEventListener("click", () => {
-  userInput.style.display = "none";
+
   sectionPage2.innerHTML = "";
   logoMain.style.display = "block";
   sectionPage3.style.display = "none";
   commencezButton.style.display = "block";
   textRevez.innerHTML = "REVEZ DE VACANCES";
   voyagesFiltered = cityList;
-
-  
-
-});
-
-// INTERACTION BUTTON  COMMENCER 
-commencezButton.addEventListener("click", () => {
-   
-//stockage 
-const userName = userInput.value;
-localStorage.setItem("userName", userName);
-
-
-
-//
-userInput.style.display = "none";
-logoMain.style.display = "none";
-  commencezButton.style.display = "none";
-  sectionPage3.style.display = "none";
-
-if (userName) {
-  textRevez.innerHTML = ` ${userName}, quelles sont vos envies ?`;
-} else {
-  textRevez.innerHTML = `Quelles sont vos envies ?`;
-}
-
-  for (let i = 0; i < imagesCards.length; i++) {
-    createCard(imagesCards[i].picture, imagesCards[i].style);
-  }
 });
 
 
-// INTERACTION BUTTON  CATALOGUE
+
+
 const buttonCatalogue = document.querySelector(".catalogueButton");
 
 buttonCatalogue.addEventListener("click", () => {
@@ -334,7 +327,7 @@ const contacts = [
   },
   {
     text: "Notre adresse",
-    logo: "images/logoLocation.png",
+    logo: "images/emplacement.png",
   },
 ];
 
