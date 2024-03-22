@@ -219,8 +219,12 @@ function createCard(imageUrl, textButton) {
     if (textButton === "500€ - 1000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
     
-      textRevez.innerHTML =
-        "Nous vous proposons deux destinations qui vous correspondent : ";
+      if(userName){
+        textRevez.innerHTML =
+          `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+        }else {
+          textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent :";
+        }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -244,8 +248,12 @@ function createCard(imageUrl, textButton) {
     if (textButton === "2500€ - 10000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
 
-      textRevez.innerHTML =
-        "Nous vous proposons deux destinations qui vous correspondent : ";
+      if(userName){
+        textRevez.innerHTML =
+          `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+        }else {
+          textRevez.innerHTML = "Nous vous proposons deux destinations qui vous correspondent :";
+        }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -258,7 +266,7 @@ function createCard(imageUrl, textButton) {
 
 const buttonAccueil = document.querySelector(".accueilButton");
 buttonAccueil.addEventListener("click", () => {
-
+  userInput.style.display = "none";
   sectionPage2.innerHTML = "";
   logoMain.style.display = "block";
   sectionPage3.style.display = "none";
@@ -276,7 +284,7 @@ commencezButton.addEventListener("click", () => {
 //stockage 
 const userName = userInput.value;
 localStorage.setItem("userName", userName);
-console.log(userName);
+
 
 
 //
@@ -301,6 +309,7 @@ if (userName) {
 const buttonCatalogue = document.querySelector(".catalogueButton");
 
 buttonCatalogue.addEventListener("click", () => {
+  userInput.style.display = "none";
   sectionPage2.innerHTML = "";
   logoMain.style.display = "none";
   sectionPage3.style.display = "none";
@@ -329,10 +338,14 @@ const contacts = [
 ];
 
 const sectionPage3 = document.querySelector(".sectionPage3");
-function createDivContact(imageUrl, text) {
-  
 
-  const headerContact = document.createElement("div");
+function createDivContact(imageUrl, text) {
+
+  const cardContact = document.createElement("div");
+    cardContact.classList.add("card-contact");
+    sectionPage3.appendChild(cardContact); 
+    
+    const headerContact = document.createElement("div");
   headerContact.classList.add("header-contact");
   cardContact.appendChild(headerContact);
 
@@ -349,10 +362,14 @@ function createDivContact(imageUrl, text) {
   textContact.classList.add("button-contact");
   textContact.innerHTML = text;
   bodyContact.appendChild(textContact);
+
+ 
 }
 
 buttonContact.addEventListener("click", () => {
+  userInput.style.display = "none";
   sectionPage2.innerHTML = "";
+  sectionPage3.style.display = "flex";
   logoMain.style.display = "none";
   commencezButton.style.display = "none";
   textRevez.innerHTML = "Retrouvez nous ";
