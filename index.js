@@ -319,7 +319,7 @@ const buttonContact = document.querySelector(".contactButton");
 const contacts = [
   {
     text: "Instagram",
-    logo: "images/logoInsta.png",
+    logo: "images/logoinsta.png",
   },
   {
     text: "Facebook",
