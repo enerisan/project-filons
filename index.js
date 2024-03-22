@@ -139,7 +139,7 @@ const imagesCards = [
   {
     picture: "images/town-36095_1280.png",
     style: "À la ville",
-    names: "200",
+    
   },
 ];
 
@@ -219,7 +219,8 @@ function createCard(imageUrl, textButton) {
     if (textButton === "500€ - 1000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
     
-      if(userName){
+      const userName = localStorage.getItem("userName");
+      if(userName){          
         textRevez.innerHTML =
           `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
         }else {
@@ -247,7 +248,7 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "2500€ - 10000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
-
+      const userName = localStorage.getItem("userName");
       if(userName){
         textRevez.innerHTML =
           `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
