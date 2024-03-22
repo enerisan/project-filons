@@ -88,7 +88,6 @@ header div ul {
   font-weight: bold;
   display: flex;
   align-items: center;
-
 }
 
 .accueilButton:hover{ 
@@ -135,6 +134,16 @@ main h2 {
    margin-top: 3rem;
   margin-bottom: 2rem;
   
+}
+
+.userInput{ 
+  background-color: #f1e6d8;
+  border-radius: 1rem;
+  text-align: center;
+  color : green;
+  font-weight: bold;
+  font-size: 1rem;
+  border : 1.9px solid #1bb45d;
 }
 
 /* animations button main*/

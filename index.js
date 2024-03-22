@@ -120,6 +120,8 @@ const sectionPage2 = document.querySelector(".sectionPage2");
 const logoMain = document.querySelector(".logo-main");
 const textRevez = document.querySelector(".TextRevez");
 let voyagesFiltered = cityList;
+const userInput = document.querySelector(".userInput");
+let userName; 
 
 // LISTE ENVIES PAG 2
 const imagesCards = [
@@ -205,8 +207,16 @@ function createCard(imageUrl, textButton) {
       }
     }
     if (textButton === "500€ - 1000€") {
+
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "500-1000");
-      textRevez.innerHTML = "Voici deux propositions qui vous correspondent :";
+      const userName = localStorage.getItem("userName");
+      if(userName){
+
+        textRevez.innerHTML =
+          `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+        }else {
+          textRevez.innerHTML = "Voici deux destinations qui vous correspondent :";
+        }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -214,8 +224,14 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "1000€ - 2500€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "1000-2500");
-    
-      textRevez.innerHTML = "Voici deux propositions qui vous correspondent :";
+      const userName = localStorage.getItem("userName");
+      if(userName){
+
+        textRevez.innerHTML =
+          `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+        }else {
+          textRevez.innerHTML = "Voici deux destinations qui vous correspondent :";
+        }
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -223,7 +239,15 @@ function createCard(imageUrl, textButton) {
     }
     if (textButton === "2500€ - 10000€") {
       voyagesFiltered = voyagesFiltered.filter((v) => v.style === "2500-10000");
-      textRevez.innerHTML = "Voici deux propositions qui vous correspondent :";
+      const userName = localStorage.getItem("userName");
+      if(userName){
+
+        textRevez.innerHTML =
+          `${userName}, nous vous proposons deux destinations qui vous correspondent :`;
+        }else {
+          textRevez.innerHTML = "Voici deux destinations qui vous correspondent :";
+        }
+   
       sectionPage2.innerHTML = "";
       for (let i = 0; i < imagesBudget.length; i++) {
         createCard(voyagesFiltered[i].picture, voyagesFiltered[i].name);
@@ -232,20 +256,36 @@ function createCard(imageUrl, textButton) {
   });
 }
 
-// EVENT PAG 1//
+// INTERACTION BUTTON  COMMENCER 
 commencezButton.addEventListener("click", () => {
-  logoMain.style.display = "none";
-  commencezButton.style.display = "none";
-  sectionPage3.style.display = "none";
-  textRevez.innerHTML = "Quelles sont vos envies ?";
 
-  for (let i = 0; i < imagesCards.length; i++) {
-    createCard(imagesCards[i].picture, imagesCards[i].style);
+  //stockage 
+  const userName = userInput.value;
+  localStorage.setItem("userName", userName);
+  
+  
+  
+  //
+  userInput.style.display = "none";
+  logoMain.style.display = "none";
+    commencezButton.style.display = "none";
+    sectionPage3.style.display = "none";
+  
+  if (userName) {
+    textRevez.innerHTML =  `${userName}, quelles sont vos envies ?`;
+  } else {
+    textRevez.innerHTML = "Quelles sont vos envies ?";
   }
-});
+  
+    for (let i = 0; i < imagesCards.length; i++) {
+      createCard(imagesCards[i].picture, imagesCards[i].style);
+    }
+  });
+  
 
 const buttonAccueil = document.querySelector(".accueilButton");
 buttonAccueil.addEventListener("click", () => {
+
   sectionPage2.innerHTML = "";
   logoMain.style.display = "block";
   sectionPage3.style.display = "none";
@@ -253,6 +293,9 @@ buttonAccueil.addEventListener("click", () => {
   textRevez.innerHTML = "REVEZ DE VACANCES";
   voyagesFiltered = cityList;
 });
+
+
+
 
 const buttonCatalogue = document.querySelector(".catalogueButton");
 
