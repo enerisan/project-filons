@@ -24,5 +24,9 @@ Work with git and github and resolve conflicts.
 Make the site responsive.
 Use of free resources.
 Deadline 3 weeks.
+![image](https://github.com/enerisan/project-filons/assets/159542722/a2a7b579-1813-4094-a843-13caf2c2aeba)
+![image](https://github.com/enerisan/project-filons/assets/159542722/f1b0ba78-a416-4cfc-99ba-dd2da8f54a9c)
+![image](https://github.com/enerisan/project-filons/assets/159542722/9717de9b-7ec3-4ed0-bfbe-b7b7f3eed32d)
+
 
 
